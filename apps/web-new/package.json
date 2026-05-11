@@ -7,7 +7,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
     "test": "node --experimental-strip-types --import ./tests/register-live-sql-loader.mjs tests/run-tests.ts",
     "test:live-sql": "node --experimental-strip-types --import ./tests/register-live-sql-loader.mjs tests/run-live-sql.ts"
   },
@@ -27,8 +26,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"
