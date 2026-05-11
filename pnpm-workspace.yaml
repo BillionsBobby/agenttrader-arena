@@ -2,10 +2,9 @@ shellEmulator: true
 
 trustPolicy: no-downgrade
 
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
-
 packages:
   - apps/*
   - packages/*
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
