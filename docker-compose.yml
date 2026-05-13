@@ -1,0 +1,27 @@
+services:
+  web:
+    build:
+      context: .
+      target: web-runner
+      args:
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL}
+        AUTH_URL: ${AUTH_URL}
+    ports:
+      - "${WEB_PORT:-3000}:8080"
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: .
+      target: worker
+    ports:
+      - "${WORKER_PORT:-8080}:8080"
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=${REDIS_URL}
+      - UPSTASH_REDIS_REST_URL=${UPSTASH_REDIS_REST_URL}
+      - UPSTASH_REDIS_REST_TOKEN=${UPSTASH_REDIS_REST_TOKEN}
+    restart: unless-stopped
