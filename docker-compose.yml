@@ -7,7 +7,7 @@ services:
         NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL}
         AUTH_URL: ${AUTH_URL}
     ports:
-      - "${WEB_PORT:-3000}:8080"
+      - '${WEB_PORT:-3000}:8080'
     env_file:
       - .env
     restart: unless-stopped
@@ -17,7 +17,7 @@ services:
       context: .
       target: worker
     ports:
-      - "${WORKER_PORT:-8080}:8080"
+      - '${WORKER_PORT:-8080}:8080'
     env_file:
       - .env
     environment:
